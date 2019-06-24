@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .button.is-fb-button {
+        background-color: #3C5A99;
+        color: #FFF;
+    }
+</style>
+<div class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered is-vcentered is-desktop is-mobile">
+                <div
+                    class="column is-three-quarters-mobile is-two-thirds-tablet is-one-half-desktop is-one-third-widescreen">
+                    <div class="card is-rounded">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Log in to continue
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p>
+                                    This is a simple Django app to implement user login with Facebook.
+                                </p>
+
+                                <p class="control has-text-right">
+                                    <a class="button is-fb-button" onclick="this.classList.add('is-loading')"
+                                    href="{% url 'social:begin' 'facebook' %}">
+                                        <span class="icon">
+                                            <i class="fab fa-lg fa-facebook-square"></i>
+                                        </span>
+                                        <span>
+                                            Continue with Facebook
+                                        </span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
