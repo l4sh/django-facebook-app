@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered is-vcentered is-desktop is-mobile">
+                <div class="column is-three-quarters-mobile is-two-thirds-tablet is-one-half-desktop is-one-third-widescreen">
+                    <div class="card is-rounded">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img src="{{ user.facebook_avatar }}" alt="{{ user.get_full_name }}" />
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">
+                                        {{ user.get_full_name }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="{% url 'userauth:logout' %}" class="card-footer-item">Logout</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
